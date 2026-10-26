@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#efe9df" />
+  <meta name="description" content="monoo Project Hub 室內工程管理原型" />
+  <title>monoo Project Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;600;700&family=Outfit:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="app-shell">
+    <aside class="sidebar glass">
+      <a class="brand" href="#" aria-label="monoo Project Hub 首頁"><span class="brand-mark">m</span><span>monoo<small>PROJECT HUB</small></span></a>
+      <nav id="mainNav" aria-label="主要導覽">
+        <button class="nav-item active" data-page="overview"><span data-icon="grid"></span><b>工程總覽</b></button>
+        <button class="nav-item" data-page="timeline"><span data-icon="timeline"></span><b>工程時間線</b></button>
+        <button class="nav-item" data-page="drawings"><span data-icon="drawing"></span><b>圖紙確認</b><em>3</em></button>
+        <button class="nav-item" data-page="messages"><span data-icon="message"></span><b>留言</b><em>5</em></button>
+        <button class="nav-item" data-page="issues"><span data-icon="alert"></span><b>現場問題</b><em class="warn">2</em></button>
+        <button class="nav-item" data-page="photos"><span data-icon="photo"></span><b>工程相片</b></button>
+        <button class="nav-item" data-page="tasks"><span data-icon="check"></span><b>待辦事項</b></button>
+      </nav>
+      <div class="side-project">
+        <small>目前工程</small><strong>西貢・海景住宅</strong><span>預計 12 月 18 日完工</span>
+        <div class="mini-progress"><i style="width:68%"></i></div>
+      </div>
+      <div class="user-mini"><span class="avatar">MC</span><span><strong id="userName">陳小姐</strong><small id="userTitle">項目管理員</small></span><button aria-label="帳戶選項">•••</button></div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="開啟選單"><span data-icon="menu"></span></button>
+        <div><p class="eyebrow" id="pageEyebrow">MONOO PROJECT HUB</p><h1 id="pageTitle">早晨，Michelle</h1></div>
+        <div class="top-actions">
+          <label class="role-select"><span>目前視角</span><select id="roleSwitch" aria-label="切換視角"><option value="admin">管理員</option><option value="staff">員工</option><option value="client">客戶</option></select></label>
+          <button class="icon-button" aria-label="通知"><span data-icon="bell"></span><i></i></button>
+          <button class="primary-action" id="quickAdd"><span data-icon="plus"></span><span>新增項目</span></button>
+        </div>
+      </header>
+
+      <section id="pageContent" class="page-content"></section>
+    </main>
+  </div>
+
+  <nav class="mobile-nav glass" id="mobileNav" aria-label="手機導覽">
+    <button data-page="overview" class="active"><span data-icon="grid"></span><small>總覽</small></button>
+    <button data-page="timeline"><span data-icon="timeline"></span><small>進度</small></button>
+    <button data-page="drawings"><span data-icon="drawing"></span><small>圖紙</small></button>
+    <button data-page="messages"><span data-icon="message"></span><small>留言</small></button>
+    <button data-page="tasks"><span data-icon="check"></span><small>待辦</small></button>
+  </nav>
+
+  <div class="modal-backdrop" id="modal" hidden>
+    <div class="modal glass" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" aria-label="關閉">×</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
+
